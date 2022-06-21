@@ -11,7 +11,7 @@ Add this line in your `composer.json` :
 ```json
 {
     "require": {
-        "m6web/firewall": "dev-master"
+        "tramtro/m6web-firewall": "^1.0"
     }
 }
 ```
@@ -19,7 +19,7 @@ Add this line in your `composer.json` :
 Update your vendors :
 
 ```
-$ composer update m6web/firewall
+$ composer update tramtro/m6web-firewall
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ $ composer update m6web/firewall
 #### Basic usage
 
 ```php
-use M6Web\Component\Firewall\Firewall;
+use nguyenanhung\Component\Firewall\Firewall;
 
 $whiteList = array(
     '127.0.0.1',
@@ -57,26 +57,25 @@ if (!$connAllowed) {
 In this example, only IPs starting with *192.168.0* (but not *192.168.0.50*) and *127.0.0.1* will be allowed by the firewall.  
 In all other case `handle()` return false.
 
-
 * `setDefaultState(false)` defines default firewall response (Optional - Default false),
 * `addList($whiteList, 'local', true)` defines `$whiteList` list, called `local` as allowed (`true`),
 * `addList($blackList, 'localBad', false);` defines `$blackList` list, called `localBad` as rejected (`false`).
 
 #### Entries Formats
 
-Type | Syntax | Details
---- | --- | ---
-IPV6|`::1`|Short notation
-IPV4|`192.168.0.1`|
-Range|`192.168.0.0-192.168.1.60`|Includes all IPs from *192.168.0.0* to *192.168.0.255*<br />and from *192.168.1.0* to *198.168.1.60*
-Wild card|`192.168.0.*`|IPs starting with *192.168.0*<br />Same as IP Range `192.168.0.0-192.168.0.255`
-Subnet mask|`192.168.0.0/255.255.255.0`|IPs starting with *192.168.0*<br />Same as `192.168.0.0-192.168.0.255` and `192.168.0.*`
-CIDR Mask|`192.168.0.0/24`|IPs starting with *192.168.0*<br />Same as `192.168.0.0-192.168.0.255` and `192.168.0.*`<br />and `192.168.0.0/255.255.255.0`
+| Type        | Syntax                      | Details                                                                                                                       |
+|-------------|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| IPV6        | `::1`                       | Short notation                                                                                                                |
+| IPV4        | `192.168.0.1`               |                                                                                                                               |
+| Range       | `192.168.0.0-192.168.1.60`  | Includes all IPs from *192.168.0.0* to *192.168.0.255*<br />and from *192.168.1.0* to *198.168.1.60*                          |
+| Wild card   | `192.168.0.*`               | IPs starting with *192.168.0*<br />Same as IP Range `192.168.0.0-192.168.0.255`                                               |
+| Subnet mask | `192.168.0.0/255.255.255.0` | IPs starting with *192.168.0*<br />Same as `192.168.0.0-192.168.0.255` and `192.168.0.*`                                      |
+| CIDR Mask   | `192.168.0.0/24`            | IPs starting with *192.168.0*<br />Same as `192.168.0.0-192.168.0.255` and `192.168.0.*`<br />and `192.168.0.0/255.255.255.0` |
 
 #### Custom error handling
 
 ```php
-use M6Web\Component\Firewall\Firewall;
+use nguyenanhung\Component\Firewall\Firewall;
 
 function handleFirewallReturn(Firewall $firewall, $response) {
     if (false === $response) {

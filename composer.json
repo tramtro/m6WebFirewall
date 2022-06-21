@@ -1,20 +1,30 @@
 {
-    "name": "m6web/firewall",
+    "name": "tramtro/m6web-firewall",
     "type": "library",
-    "description" : "Library providing IP filtering features",
-    "keywords": ["firewall","IP","filtering"],
+    "description": "Library providing IP filtering features",
+    "keywords": [
+        "firewall",
+        "IP",
+        "filtering"
+    ],
     "license": "MIT",
     "authors": [
         {
             "name": "M6Web",
             "email": "opensource@m6web.fr",
-            "homepage": "http://tech.m6web.fr/"
+            "homepage": "https://tech.m6web.fr/"
+        },
+        {
+            "name": "Nguyen An Hung",
+            "email": "dev@nguyenanhung.com",
+            "homepage": "https://nguyenanhung.com/"
         }
     ],
     "autoload": {
-        "psr-0": {"M6Web\\Component\\Firewall": ""}
+        "psr-4": {
+            "nguyenanhung\\Component\\Firewall\\": "src/"
+        }
     },
-    "target-dir": "M6Web/Component/Firewall",
     "require": {
         "php": ">=5.4.0",
         "ext-bcmath": "*"
