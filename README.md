@@ -1,3 +1,10 @@
+[![Latest Stable Version](https://img.shields.io/packagist/v/tramtro/m6web-firewall.svg?style=flat-square)](https://packagist.org/packages/tramtro/m6web-firewall)
+[![Total Downloads](https://img.shields.io/packagist/dt/tramtro/m6web-firewall.svg?style=flat-square)](https://packagist.org/packages/tramtro/m6web-firewall)
+[![Daily Downloads](https://img.shields.io/packagist/dd/tramtro/m6web-firewall.svg?style=flat-square)](https://packagist.org/packages/tramtro/m6web-firewall)
+[![Monthly Downloads](https://img.shields.io/packagist/dm/tramtro/m6web-firewall.svg?style=flat-square)](https://packagist.org/packages/tramtro/m6web-firewall)
+[![License](https://img.shields.io/packagist/l/tramtro/m6web-firewall.svg?style=flat-square)](https://packagist.org/packages/tramtro/m6web-firewall)
+[![PHP Version Require](https://img.shields.io/packagist/dependency-v/tramtro/m6web-firewall/php)](https://packagist.org/packages/tramtro/m6web-firewall)
+
 # Firewall by m6web
 
 This PHP 5.4+ library provides IP filtering features.  
